@@ -1,0 +1,27 @@
+
+f_qiutian2.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+youhua
+  rotate: false
+  xy: 276, 322
+  size: 153, 173
+  orig: 153, 173
+  offset: 0, 0
+  index: -1
+zuohua4
+  rotate: false
+  xy: 0, 0
+  size: 209, 189
+  orig: 209, 189
+  offset: 0, 0
+  index: -1
+zuohuli
+  rotate: false
+  xy: 0, 191
+  size: 274, 304
+  orig: 274, 304
+  offset: 0, 0
+  index: -1

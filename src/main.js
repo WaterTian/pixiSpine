@@ -1,3 +1,4 @@
+var canvasBox;
 var renderer, stage;
 
 
@@ -6,47 +7,104 @@ var mouseX = 0,
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
-var spineBoy = null;
+var fileDir = './assets/';
+var spineNameList = [];
 
-
+var spineList = [];
 
 init();
 
 function init() {
-    renderer = PIXI.autoDetectRenderer(600, 600);
-    document.getElementById('canvasBox').appendChild(renderer.view);
+    renderer = PIXI.autoDetectRenderer(600, 800);
+    canvasBox = document.getElementById('canvasBox').appendChild(renderer.view);
 
     stage = new PIXI.Container();
 
-    // load spine data
-    PIXI.loader
-        // .add('spineBoy', './assets/spine/renlianshibie_qiutian.json')
-        .add('spineBoy', './assets/spine/raptor.json')
-        .load(onAssetsLoaded);
+    function dragHandle(event) {
+        event.preventDefault();
+        if(event.type == "drop") {
+            var files = event.dataTransfer.files;
+            var info = files[0];
+
+            console.log(info);
+            fileDir +=info.name;
+            console.log(fileDir);
+            loadConfig(fileDir);
+        }
+    }
+    canvasBox.addEventListener("dragenter", dragHandle, false);
+    canvasBox.addEventListener("dragover", dragHandle, false);
+    canvasBox.addEventListener("drop", dragHandle, false);
+}
+
+function loadConfig(fileDir) {
+    PIXI.loader.add('config', fileDir + '/config.json')
+
+    PIXI.loader.load(function(loader, res)
+    {
+        console.log(res);
+        var arr=res.config.data.param;
+        console.log(arr);
+        for(i in arr)
+        {
+            if(arr[i].spine)
+            {
+                if(arr[i].spine.spine_name)
+                {
+                    spineNameList.push(arr[i].spine.spine_name);
+                }
+            }
+        }
+
+        console.log(spineNameList);
+
+        loadSpines();
+    });
+}
+
+function loadSpines() {
+    for (i in spineNameList) {
+        PIXI.loader.add(spineNameList[i], fileDir +'/'+ spineNameList[i] + '.json')
+    }
+
+    PIXI.loader.load(onAssetsLoaded);
 }
 
 
 function onAssetsLoaded(loader, res) {
-    spineBoy = new PIXI.spine.Spine(res.spineBoy.spineData);
+    console.log(res);
 
-    spineBoy.position.x = renderer.width / 2;
-    spineBoy.position.y = renderer.height;
+    for (i in spineNameList) {
+        var spine = createSpine(res, spineNameList[i]);
+        spineList.push(spine);
+        stage.addChild(spine);
+    }
 
-    var scale = Math.min((renderer.width * 0.7) / spineBoy.width, (renderer.height * 0.7) / spineBoy.height);
-    spineBoy.scale.set(scale, scale);
+    animate();
+}
+
+
+function createSpine(res, name) {
+    var spine = new PIXI.spine.Spine(res[name].spineData);
+
+    spine.position.x = renderer.width / 2;
+    spine.position.y = renderer.height *3/4;
+
+    var scale = Math.min((renderer.width * 0.7) / spine.width, (renderer.height * 0.7) / spine.height);
+    // var scale = 0.5;
+    spine.scale.set(scale, scale);
 
 
     // set up the mixes!
-    // spineBoy.stateData.setMix('walk', 'Jump', 0.2);
-    // spineBoy.stateData.setMix('Jump', 'walk', 0.4);
+    // spine.stateData.setMix('walk', 'Jump', 0.2);
+    // spine.stateData.setMix('Jump', 'walk', 0.4);
 
     // play animation
-    spineBoy.state.setAnimation(0, 2, true);
-    spineBoy.state.timeScale = 1;
+    // spine.state.setAnimation(0, 'walk', true);
+    spine.state.setAnimation(0, 0, true);
+    spine.state.timeScale = 1;
 
-    stage.addChild(spineBoy);
-
-    animate();
+    return spine;
 }
 
 

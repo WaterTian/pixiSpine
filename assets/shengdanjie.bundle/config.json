@@ -1,0 +1,30 @@
+{
+    "action": "image_animation",
+    "param": [
+        {
+            "id": "w0",
+            "loop": "1",
+            "name": "w0",
+            "resourcePath": "/Users/wangyukun/Downloads",
+            "resourceType": "spine",
+            "spine": {
+                "animation": "animation",
+                "boneMap": {
+                    "bone3_190": "190",
+                    "bone4_380": "380",
+                    "christmas_dd_0024_nose_290": "290"
+                },
+                "spine_name": "shengdanjie"
+            },
+            "subType": "screen",
+            "triggeredBy": [
+                {
+                    "category": "any"
+                }
+            ],
+            "type": "anim"
+        }
+    ],
+    "version": "v3",
+    "haveoccasion": "1"
+}

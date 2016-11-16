@@ -1,0 +1,64 @@
+{
+    "action": "image_animation",
+    "param": [
+        {
+            "id": "w0",
+            "loop": "1",
+            "name": "w0",
+            "resourcePath": "/Users/wangyukun/Downloads",
+            "resourceType": "spine",
+            "spine": {
+                "animation": "animation",
+                "boneMap": {
+                    "root_0": "0"
+                },
+                "spine_name": "g_qiutian2"
+            },
+            "subType": "screen",
+            "triggeredBy": [
+                {
+                    "category": "any"
+                }
+            ],
+            "type": "anim"
+        },
+        {
+            "id": "w1",
+            "loop": "1",
+            "name": "w1",
+            "personid": "0",
+            "resourcePath": "/Users/wangyukun/Downloads",
+            "resourceType": "spine",
+            "spine": {
+                "animation": "animation",
+                "boneMap": {
+                    "hongguoshu_300": "300",
+                    "maolian_shuzhi_yun_160": "160"
+                },
+                "spine_name": "f_qiutian2"
+            },
+            "subType": "face",
+            "triggeredBy": [
+                {
+                    "category": "any"
+                }
+            ],
+            "type": "anim"
+        },
+        {
+            "id": "mask01",
+            "images": [
+                "zhuang2.png"
+            ],
+            "mappings": {
+                "zhuang2.png": "/Users/wangyukun/Downloads/zhuang2.png"
+            },
+            "personid": "0",
+            "resourcePath": "/Users/wangyukun/Downloads",
+            "subType": "static",
+            "type": "mask"
+        }
+    ],
+    "version": "v3",
+    "haveoccasion": "1"
+}

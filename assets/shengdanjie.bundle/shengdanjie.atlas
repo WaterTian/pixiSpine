@@ -1,0 +1,265 @@
+
+shengdanjie.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+christmas_dd_0000_line
+  rotate: true
+  xy: 1523, 796
+  size: 461, 142
+  orig: 461, 142
+  offset: 0, 0
+  index: -1
+christmas_dd_0001_a_w01_little
+  rotate: false
+  xy: 137, 8
+  size: 43, 24
+  orig: 43, 24
+  offset: 0, 0
+  index: -1
+christmas_dd_0002_a_w01_big
+  rotate: false
+  xy: 801, 411
+  size: 83, 74
+  orig: 83, 74
+  offset: 0, 0
+  index: -1
+christmas_dd_0003_a_w02_little
+  rotate: true
+  xy: 1068, 429
+  size: 56, 45
+  orig: 56, 45
+  offset: 0, 0
+  index: -1
+christmas_dd_0004_a_w02_big
+  rotate: true
+  xy: 349, 43
+  size: 92, 97
+  orig: 92, 97
+  offset: 0, 0
+  index: -1
+christmas_dd_0005_a_body
+  rotate: true
+  xy: 1115, 441
+  size: 141, 198
+  orig: 141, 198
+  offset: 0, 0
+  index: -1
+christmas_dd_0006_a_n01_big
+  rotate: false
+  xy: 1928, 1314
+  size: 48, 42
+  orig: 48, 42
+  offset: 0, 0
+  index: -1
+christmas_dd_0007_a_n01_little
+  rotate: false
+  xy: 895, 154
+  size: 59, 62
+  orig: 59, 62
+  offset: 0, 0
+  index: -1
+christmas_dd_0008_a_n02_little
+  rotate: false
+  xy: 996, 199
+  size: 37, 49
+  orig: 37, 49
+  offset: 0, 0
+  index: -1
+christmas_dd_0009_a_n02_bing
+  rotate: true
+  xy: 1928, 1468
+  size: 103, 88
+  orig: 103, 88
+  offset: 0, 0
+  index: -1
+christmas_dd_0010_b_w01_little
+  rotate: false
+  xy: 1523, 770
+  size: 44, 24
+  orig: 44, 24
+  offset: 0, 0
+  index: -1
+christmas_dd_0011_b_w01_big
+  rotate: false
+  xy: 1315, 474
+  size: 48, 60
+  orig: 48, 60
+  offset: 0, 0
+  index: -1
+christmas_dd_0012_b_w02_little
+  rotate: false
+  xy: 1315, 536
+  size: 56, 46
+  orig: 56, 46
+  offset: 0, 0
+  index: -1
+christmas_dd_0013_b_w02_big
+  rotate: true
+  xy: 448, 43
+  size: 92, 97
+  orig: 92, 97
+  offset: 0, 0
+  index: -1
+christmas_dd_0014_b_body
+  rotate: false
+  xy: 1373, 564
+  size: 142, 198
+  orig: 142, 198
+  offset: 0, 0
+  index: -1
+christmas_dd_0015_b_n01_little
+  rotate: true
+  xy: 1068, 378
+  size: 49, 43
+  orig: 49, 43
+  offset: 0, 0
+  index: -1
+christmas_dd_0016_b_n01_big
+  rotate: false
+  xy: 996, 250
+  size: 59, 62
+  orig: 59, 62
+  offset: 0, 0
+  index: -1
+christmas_dd_0017_b_n02_little
+  rotate: false
+  xy: 956, 167
+  size: 38, 49
+  orig: 38, 49
+  offset: 0, 0
+  index: -1
+christmas_dd_0018_b_n02_big
+  rotate: false
+  xy: 243, 47
+  size: 104, 88
+  orig: 104, 88
+  offset: 0, 0
+  index: -1
+christmas_dd_0019_MAN
+  rotate: false
+  xy: 801, 487
+  size: 312, 275
+  orig: 312, 275
+  offset: 0, 0
+  index: -1
+christmas_dd_0020_a_snow
+  rotate: false
+  xy: 895, 314
+  size: 171, 171
+  orig: 171, 171
+  offset: 0, 0
+  index: -1
+christmas_dd_0021_b_snow
+  rotate: false
+  xy: 1928, 1573
+  size: 99, 99
+  orig: 99, 99
+  offset: 0, 0
+  index: -1
+christmas_dd_0022_c_snow
+  rotate: false
+  xy: 0, 0
+  size: 135, 135
+  orig: 135, 135
+  offset: 0, 0
+  index: -1
+christmas_dd_0023_bell
+  rotate: true
+  xy: 1667, 941
+  size: 316, 248
+  orig: 316, 248
+  offset: 0, 0
+  index: -1
+christmas_dd_0024_nose
+  rotate: false
+  xy: 137, 34
+  size: 104, 101
+  orig: 104, 101
+  offset: 0, 0
+  index: -1
+christmas_dd_0025_ling
+  rotate: false
+  xy: 895, 218
+  size: 99, 94
+  orig: 99, 94
+  offset: 0, 0
+  index: -1
+christmas_dd_0026_scarf
+  rotate: true
+  xy: 1928, 1674
+  size: 370, 99
+  orig: 370, 99
+  offset: 0, 0
+  index: -1
+christmas_dd_0027_jiao
+  rotate: true
+  xy: 1523, 1259
+  size: 785, 403
+  orig: 785, 403
+  offset: 0, 0
+  index: -1
+christmas_dd_0028_r_ear
+  rotate: false
+  xy: 1115, 584
+  size: 256, 178
+  orig: 256, 178
+  offset: 0, 0
+  index: -1
+christmas_dd_0029_l_ear
+  rotate: false
+  xy: 1667, 761
+  size: 255, 178
+  orig: 255, 178
+  offset: 0, 0
+  index: -1
+christmas_dd_0030_board
+  rotate: false
+  xy: 0, 137
+  size: 893, 255
+  orig: 893, 255
+  offset: 0, 0
+  index: -1
+christmas_dd_0031_b_yellow
+  rotate: false
+  xy: 1928, 1358
+  size: 51, 49
+  orig: 51, 49
+  offset: 0, 0
+  index: -1
+christmas_dd_0032_a_yellow
+  rotate: false
+  xy: 1928, 1409
+  size: 54, 57
+  orig: 54, 57
+  offset: 0, 0
+  index: -1
+christmas_dd_0033_b_red
+  rotate: false
+  xy: 603, 86
+  size: 51, 49
+  orig: 51, 49
+  offset: 0, 0
+  index: -1
+christmas_dd_0034_a_red
+  rotate: false
+  xy: 547, 78
+  size: 54, 57
+  orig: 54, 57
+  offset: 0, 0
+  index: -1
+face_720_female
+  rotate: false
+  xy: 801, 764
+  size: 720, 1280
+  orig: 720, 1280
+  offset: 0, 0
+  index: -1
+suger
+  rotate: false
+  xy: 0, 394
+  size: 799, 1650
+  orig: 799, 1650
+  offset: 0, 0
+  index: -1
