@@ -7,7 +7,7 @@ var mouseX = 0,
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
-var fileDir = './assets/';
+var fileDir;
 var spineNameList = [];
 
 var spineList = [];
@@ -26,10 +26,12 @@ function init() {
             var files = event.dataTransfer.files;
             var info = files[0];
 
-            console.log(info);
+            fileDir = './assets/';
+            spineNameList = [];
+            
             fileDir +=info.name;
             console.log(fileDir);
-            loadConfig(fileDir);
+            loadConfig(fileDir,info.name);
         }
     }
     canvasBox.addEventListener("dragenter", dragHandle, false);
@@ -37,13 +39,13 @@ function init() {
     canvasBox.addEventListener("drop", dragHandle, false);
 }
 
-function loadConfig(fileDir) {
-    PIXI.loader.add('config', fileDir + '/config.json')
+function loadConfig(fileDir,infoName) {
+    PIXI.loader.add(infoName, fileDir + '/config.json')
 
     PIXI.loader.load(function(loader, res)
     {
         console.log(res);
-        var arr=res.config.data.param;
+        var arr=res[infoName].data.param;
         console.log(arr);
         for(i in arr)
         {
