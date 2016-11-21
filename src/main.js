@@ -1,5 +1,6 @@
-var canvasBox;
+var canvas;
 var renderer, stage;
+var stats;
 
 
 var mouseX = 0,
@@ -15,44 +16,58 @@ var spineList = [];
 init();
 
 function init() {
-    renderer = PIXI.autoDetectRenderer(600, 800);
-    canvasBox = document.getElementById('canvasBox').appendChild(renderer.view);
+
+    renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, {
+        transparent: true,
+    });
+    canvas = renderer.view;
+    var canvasBox = document.getElementById('canvasBox');
+    canvasBox.appendChild(canvas)
 
     stage = new PIXI.Container();
 
-    function dragHandle(event) {
-        event.preventDefault();
-        if(event.type == "drop") {
-            var files = event.dataTransfer.files;
-            var info = files[0];
 
-            fileDir = './assets/';
-            spineNameList = [];
-            
-            fileDir +=info.name;
-            console.log(fileDir);
-            loadConfig(fileDir,info.name);
-        }
-    }
-    canvasBox.addEventListener("dragenter", dragHandle, false);
-    canvasBox.addEventListener("dragover", dragHandle, false);
-    canvasBox.addEventListener("drop", dragHandle, false);
+    // STATS
+    stats = new Stats();
+    canvasBox.appendChild(stats.dom);
+
+
+    // function dragHandle(event) {
+    //     event.preventDefault();
+    //     if (event.type == "drop") {
+    //         var files = event.dataTransfer.files;
+    //         var info = files[0];
+
+    //         fileDir = './assets/';
+    //         spineNameList = [];
+
+    //         fileDir += info.name;
+    //         console.log(fileDir);
+    //         loadConfig(fileDir, info.name);
+    //     }
+    // }
+    // canvas.addEventListener("dragenter", dragHandle, false);
+    // canvas.addEventListener("dragover", dragHandle, false);
+    // canvas.addEventListener("drop", dragHandle, false);
+
+
+    //test
+    fileDir = './assets/';
+    spineNameList = [];
+    fileDir += 'tzclb.bundle';
+    loadConfig(fileDir, 'tzclb.bundle');
 }
 
-function loadConfig(fileDir,infoName) {
+function loadConfig(fileDir, infoName) {
     PIXI.loader.add(infoName, fileDir + '/config.json')
 
-    PIXI.loader.load(function(loader, res)
-    {
+    PIXI.loader.load(function(loader, res) {
         console.log(res);
-        var arr=res[infoName].data.param;
+        var arr = res[infoName].data.param;
         console.log(arr);
-        for(i in arr)
-        {
-            if(arr[i].spine)
-            {
-                if(arr[i].spine.spine_name)
-                {
+        for (i in arr) {
+            if (arr[i].spine) {
+                if (arr[i].spine.spine_name) {
                     spineNameList.push(arr[i].spine.spine_name);
                 }
             }
@@ -66,7 +81,7 @@ function loadConfig(fileDir,infoName) {
 
 function loadSpines() {
     for (i in spineNameList) {
-        PIXI.loader.add(spineNameList[i], fileDir +'/'+ spineNameList[i] + '.json')
+        PIXI.loader.add(spineNameList[i], fileDir + '/' + spineNameList[i] + '.json')
     }
 
     PIXI.loader.load(onAssetsLoaded);
@@ -89,13 +104,12 @@ function onAssetsLoaded(loader, res) {
 function createSpine(res, name) {
     var spine = new PIXI.spine.Spine(res[name].spineData);
 
-    spine.position.x = renderer.width / 2;
-    spine.position.y = renderer.height *3/4;
-
-    var scale = Math.min((renderer.width * 0.7) / spine.width, (renderer.height * 0.7) / spine.height);
+    var scale = Math.min(renderer.width/ spine.width, renderer.height/ spine.height);
     // var scale = 0.5;
     spine.scale.set(scale, scale);
 
+    spine.position.x = renderer.width / 2;
+    spine.position.y = renderer.height;
 
     // set up the mixes!
     // spine.stateData.setMix('walk', 'Jump', 0.2);
@@ -114,4 +128,5 @@ function createSpine(res, name) {
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(stage);
+    stats.update();
 }

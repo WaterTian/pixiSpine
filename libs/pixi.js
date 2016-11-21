@@ -29754,7 +29754,11 @@ var InteractionManager = function (_EventEmitter) {
          * @readonly
          * @member {boolean}
          */
-        _this.supportsTouchEvents = 'ontouchstart' in window;
+         //tyADD
+        // _this.supportsTouchEvents = 'ontouchstart' in window;
+        _this.supportsTouchEvents = '' in window;
+        
+
 
         /**
          * Does the device support pointer events
