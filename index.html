@@ -58,22 +58,15 @@
             <div id="canvasBox" class="canvas-box"></div>
         </figure >
 
-        <script src="libs/hls.min.js"></script>
         <script>
             // var videoUrl = 'http://ogptqk1a5.bkt.clouddn.com/lnfpYFRc3WIkt9e6ucRySCbDnCFB';
-            var videoUrl = '../VideoTest/v3_.mp4';
+            var videoUrl = './v3.mp4';
             var isMp4 = true;
             // var videoUrl = 'http://wscdn.alhls.xiaoka.tv/20161121/ee6/6fc/yc30kswsc-Xnv09d/index.m3u8';
            
             var video = document.getElementById("video");
             video.src = videoUrl;
             
-            if(Hls.isSupported() && !isMp4) 
-            {
-                // var hls = new Hls();
-                // hls.loadSource(videoUrl);
-                // hls.attachMedia(video);
-            }
         </script>
 
 

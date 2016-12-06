@@ -32,23 +32,23 @@ function init() {
     canvasBox.appendChild(stats.dom);
 
 
-    // function dragHandle(event) {
-    //     event.preventDefault();
-    //     if (event.type == "drop") {
-    //         var files = event.dataTransfer.files;
-    //         var info = files[0];
+    function dragHandle(event) {
+        event.preventDefault();
+        if (event.type == "drop") {
+            var files = event.dataTransfer.files;
+            var info = files[0];
 
-    //         fileDir = './assets/';
-    //         spineNameList = [];
+            fileDir = './assets/';
+            spineNameList = [];
 
-    //         fileDir += info.name;
-    //         console.log(fileDir);
-    //         loadConfig(fileDir, info.name);
-    //     }
-    // }
-    // canvas.addEventListener("dragenter", dragHandle, false);
-    // canvas.addEventListener("dragover", dragHandle, false);
-    // canvas.addEventListener("drop", dragHandle, false);
+            fileDir += info.name;
+            console.log(fileDir);
+            loadConfig(fileDir, info.name);
+        }
+    }
+    canvas.addEventListener("dragenter", dragHandle, false);
+    canvas.addEventListener("dragover", dragHandle, false);
+    canvas.addEventListener("drop", dragHandle, false);
 
 
     //test
