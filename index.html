@@ -19,14 +19,6 @@
                 margin: 0;
                 padding: 0;
             }
-            .video-box .video{
-                background: rgb(0, 0, 0);
-                width: 102.2%;
-                /*height: 667px;*/
-                margin-top: 0px;
-                margin-left: -1.1%;
-                margin-right: -1.1%;
-            }
             .canvas-box{
                 position: absolute;
                 width: 100%;
@@ -44,28 +36,19 @@
         </style>
     </head>
     <body>
-        <div id="video-box" class="video-box">
-            <video id="video" class="video"
-            autoplay="autoplay" 
-            preload="auto"
-            poster=""
-            loop="loop"
-            webkit-playsinline="true" 
-            playsinline="true"
-            x-webkit-airplay="true" 
-            >
-            </video>
-            <div id="canvasBox" class="canvas-box"></div>
-        </div >
+        <div id="videoPlayer" class="video-box"> </div>
+        <div id="canvasBox" class="canvas-box"></div>
 
+        <script src="libs/Swplayerlibs.min.js"></script>
+        <script src="libs/Swplayer.min.js"></script>
         <script>
-            // var videoUrl = 'http://ogptqk1a5.bkt.clouddn.com/lnfpYFRc3WIkt9e6ucRySCbDnCFB';
-            var videoUrl = './v3.mp4';
-            // var videoUrl = 'http://wscdn.alhls.xiaoka.tv/20161121/ee6/6fc/yc30kswsc-Xnv09d/index.m3u8';
-           
-            var video = document.getElementById("video");
-            video.src = videoUrl;
-            
+            var videoUrl = 'http://alcdn.hls.xiaoka.tv/2016121/4c8/834/JQzoRZZaz2zJ5GbS/index.m3u8';
+            // var videoUrl = 'http://playback.appmagics.cn/recordings/z1.appmagics-avatar-live.785192071480916430193/0_1480934734.m3u8';
+            // var videoUrl = './v3.mp4';
+            playerApp.init(videoUrl,"videoPlayer");
+            $('#videoPlayer').click(function() {
+                playerApp.doplay();
+            });
         </script>
 
 
