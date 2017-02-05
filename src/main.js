@@ -13,7 +13,6 @@ var spineNameList = [];
 
 var spineList = [];
 
-init();
 
 function init() {
 

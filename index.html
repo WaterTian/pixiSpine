@@ -38,6 +38,15 @@
     <body>
         <div id="videoPlayer" class="video-box"> </div>
         <div id="canvasBox" class="canvas-box"></div>
+        
+        <div id="log" class="log-box">Drop the spine json to here</div>
+
+		
+        <script src="libs/pixi.js"></script>
+        <script src="libs/stats.min.js"></script>
+        <script src="plugins/pixi-spine.js"></script>
+        
+        <script src="src/main.js"></script>
 
         <script src="libs/Swplayerlibs.min.js"></script>
         <script src="libs/Swplayer.min.js"></script>
@@ -46,22 +55,15 @@
             // var videoUrl = 'http://playback.appmagics.cn/recordings/z1.appmagics-avatar-live.785192071480916430193/0_1480934734.m3u8';
             // var videoUrl = './v3.mp4';
             playerApp.init(videoUrl,"videoPlayer");
+
             $('#videoPlayer').click(function() {
                 playerApp.doplay();
+                init();
             });
+
+            var isIphone = /iphone/i.test(navigator.userAgent);
+            if(isIphone)init();
         </script>
-
-
         
-        <div id="log" class="log-box">Drop the spine json to here</div>
-
-
-
-		
-        <script src="libs/pixi.js"></script>
-        <script src="libs/stats.min.js"></script>
-        <script src="plugins/pixi-spine.js"></script>
-        
-        <script src="src/main.js"></script>
     </body>
 </html>
